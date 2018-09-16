@@ -88,11 +88,11 @@ namespace updater_script_builder
                           MessageBoxIcon.Warning,
                           MessageBoxDefaultButton.Button2) == DialogResult.OK)
                     {
-                        System.Diagnostics.Process.Start("http://git.droidbeta.com/Kucashu/RandomAppication/Appilicatiojn.zip");
+                        System.Diagnostics.Process.Start("http://git.droidbeta.com/Kucashu/updater-script-builder/Appilication.zip");
                     }
                 }
             }
-    }
+        }
 
         private void Update_Load(object sender, EventArgs e)
         {
@@ -104,4 +104,31 @@ namespace updater_script_builder
             string Klog = Kconfig.ReadValue("Update", "Log");
             updateBox.Text = "[当前版本]\r\nVersion:" + Kversion + "\r\nCode Name:" + Kcode + "\r\n\r\n[最新版本]\r\n未知\r\n\r\n[更新日志]\r\n" + Klog;
         }
+
+        public class Kconfig
+        {
+            [System.Runtime.InteropServices.DllImport("kernel32")]
+            private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
+            [System.Runtime.InteropServices.DllImport("kernel32")]
+            private static extern int GetPrivateProfileString(string section, string key, string def, System.Text.StringBuilder retVal, int size, string filePath);
+            private string mPath = null;
+            public Kconfig(string path)
+            {
+                this.mPath = path;
+            }
+
+            public void Writue(string section, string key, string value)
+            {
+                WritePrivateProfileString(section, key, value, mPath);
+            }
+            public string ReadValue(string section, string key)
+            {
+                System.Text.StringBuilder temp = new System.Text.StringBuilder(255);
+                GetPrivateProfileString(section, key, "", temp, 255, mPath);
+
+                return temp.ToString();
+
+            }
+        }
     }
+}
