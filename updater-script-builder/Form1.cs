@@ -34,14 +34,11 @@ namespace updater_script_builder
 
         private void codeGround_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyData == Keys.Enter) { }
             KeyDownUp(sender, e);
         }
         private void codeGround_KeyUp(object sender, KeyEventArgs e)
         {
-            //codeGround.Text = e.KeyData.ToString();
-            //codeGround.Text = e.KeyValue.ToString();
-            //KeyDownUp(sender, e);
+
         }
 
         private void KeyDownUp(object sender, KeyEventArgs e)
@@ -57,28 +54,16 @@ namespace updater_script_builder
                 }
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e)
         {
-            //codeGround.KeyDown += new KeyEventHandler(rich_KeyDown);   //这一行添加到Form1_Load中
+            codeGround.KeyDown += new KeyEventHandler(codeGround_KeyDown);
 
             codeGround.SelectionFont = new Font("宋体", 12, (FontStyle.Regular));
             codeGround.Text = "public private static void true false string Regex RegexOptions new Get if else return\r"
                 + "以上字符是加载字符.\r";
             codeGround.Select(codeGround.Text.Length, 0);
         }
-        //void rich_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    //if (e.KeyData == Keys.Enter) { }
 
-
-        //    RichTextBox rich = (RichTextBox)sender;
-        //    string s = GetLastWord(rich.Text, rich.SelectionStart);
-
-        //    if (AllClass().IndexOf(s) > -1)
-        //    {
-        //        MySelect(rich, rich.SelectionStart, s, Color.Blue, true);
-        //    }
-        //}
 
 
         /// <summary> 建立关键字 </summary>
@@ -129,19 +114,11 @@ namespace updater_script_builder
             {
                 tb.SelectionFont = new Font("宋体", 12, (FontStyle.Bold));
             }
-            //else
-            //    tb.SelectionFont = new Font("宋体", 12, (FontStyle.Regular));
-
-            //以下是把光标放到原来位置，并把光标后输入的文字重置
             tb.Select(i, 0);
             tb.SelectionFont = new Font("宋体", 12, (FontStyle.Regular));
             tb.SelectionColor = Color.Black;
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
 
 
