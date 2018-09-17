@@ -59,8 +59,6 @@ namespace updater_script_builder
             codeGround.KeyDown += new KeyEventHandler(codeGround_KeyDown);
 
             codeGround.SelectionFont = new Font("宋体", 12, (FontStyle.Regular));
-            codeGround.Text = "public private static void true false string Regex RegexOptions new Get if else return\r"
-                + "以上字符是加载字符.\r";
             codeGround.Select(codeGround.Text.Length, 0);
         }
 
@@ -71,23 +69,29 @@ namespace updater_script_builder
         public static List<string> AllClass()
         {
             List<string> list = new List<string>();
-            list.Add("string");
-            list.Add("public");
-            list.Add("new");
-            list.Add("int");
-            list.Add("static");
-            list.Add("Get");
-            list.Add("RegexOptions");
-            list.Add("Regex");
-            list.Add("if");
-            list.Add("else");
-            list.Add("return");
-            list.Add("void");
-            list.Add("private");
-            list.Add("true");
-            list.Add("false");
-            list.Add("");
-            list.Add("");
+            list.Add("mount");
+            list.Add("format");
+            list.Add("delete");
+            list.Add("delete_recursive");
+            list.Add("show_progress");
+            list.Add("set_progress");
+            list.Add("package_extract_file");
+            list.Add("file_getprop");
+            list.Add("symlink");
+            list.Add("set_perm");
+            list.Add("set_perm_recursive");
+            list.Add("getprop");
+            list.Add("write_raw_image");
+            list.Add("apply_patch");
+            list.Add("apply_patch_space");
+            list.Add("read_file");
+            list.Add("ui_print");
+            list.Add("run_program");
+            list.Add("sha1_check");
+            list.Add("apply_patch_check");
+            list.Add("ifelse");
+            list.Add("abort");
+            list.Add("assert");
 
             return list;
         }
