@@ -130,5 +130,12 @@ namespace updater_script_builder
         {
 
         }
+
+
+
+        private void cleanCode_Click(object sender, EventArgs e)
+        {
+            codeGround.Text = "";
+        }
     }
 }

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("输出字符");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("文件删除");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("递归删除");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("设置文件权限");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("递归设置文件权限");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("文件操作", new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("执行shell文件");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("刷入zip包");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("输出字符");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("文件删除");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("递归删除");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("设置文件权限");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("递归设置文件权限");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("文件操作", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("执行shell文件");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("刷入zip包");
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -49,6 +49,7 @@
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.codeGround = new System.Windows.Forms.RichTextBox();
+            this.cleanCode = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,26 +66,26 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 42);
             this.treeView1.Name = "treeView1";
-            treeNode25.Name = "ui_print";
-            treeNode25.Text = "输出字符";
-            treeNode26.Name = "节点5";
-            treeNode26.Text = "文件删除";
-            treeNode27.Name = "节点8";
-            treeNode27.Text = "递归删除";
-            treeNode28.Name = "节点9";
-            treeNode28.Text = "设置文件权限";
-            treeNode29.Name = "节点10";
-            treeNode29.Text = "递归设置文件权限";
-            treeNode30.Name = "delect";
-            treeNode30.Text = "文件操作";
-            treeNode31.Name = "节点12";
-            treeNode31.Text = "执行shell文件";
-            treeNode32.Name = "节点13";
-            treeNode32.Text = "刷入zip包";
+            treeNode9.Name = "ui_print";
+            treeNode9.Text = "输出字符";
+            treeNode10.Name = "节点5";
+            treeNode10.Text = "文件删除";
+            treeNode11.Name = "节点8";
+            treeNode11.Text = "递归删除";
+            treeNode12.Name = "节点9";
+            treeNode12.Text = "设置文件权限";
+            treeNode13.Name = "节点10";
+            treeNode13.Text = "递归设置文件权限";
+            treeNode14.Name = "delect";
+            treeNode14.Text = "文件操作";
+            treeNode15.Name = "节点12";
+            treeNode15.Text = "执行shell文件";
+            treeNode16.Name = "节点13";
+            treeNode16.Text = "刷入zip包";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode31,
-            treeNode32});
+            treeNode14,
+            treeNode15,
+            treeNode16});
             this.treeView1.Size = new System.Drawing.Size(203, 332);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -137,15 +138,27 @@
             this.codeGround.Text = "";
             this.codeGround.TextChanged += new System.EventHandler(this.codeGround_TextChanged);
             // 
+            // cleanCode
+            // 
+            this.cleanCode.Location = new System.Drawing.Point(608, 398);
+            this.cleanCode.Name = "cleanCode";
+            this.cleanCode.Size = new System.Drawing.Size(131, 39);
+            this.cleanCode.TabIndex = 6;
+            this.cleanCode.Text = "清空";
+            this.cleanCode.UseVisualStyleBackColor = true;
+            this.cleanCode.Click += new System.EventHandler(this.cleanCode_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cleanCode);
             this.Controls.Add(this.codeGround);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "updater-script Builder";
@@ -167,6 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.RichTextBox codeGround;
+        private System.Windows.Forms.Button cleanCode;
     }
 }
 
