@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace updater_script_builder
 {
@@ -92,7 +94,11 @@ namespace updater_script_builder
             list.Add("ifelse");
             list.Add("abort");
             list.Add("assert");
-
+            list.Add("(");
+            list.Add(")");
+            list.Add("\"");
+            list.Add("(\"");
+            list.Add("\")");
             return list;
         }
 
@@ -116,10 +122,10 @@ namespace updater_script_builder
 
             if (font)
             {
-                tb.SelectionFont = new Font("宋体", 12, (FontStyle.Bold));
+                tb.SelectionFont = new Font("Calibri", 12, (FontStyle.Bold));
             }
             tb.Select(i, 0);
-            tb.SelectionFont = new Font("宋体", 12, (FontStyle.Regular));
+            tb.SelectionFont = new Font("Calibri", 12, (FontStyle.Regular));
             tb.SelectionColor = Color.Black;
         }
 
@@ -136,6 +142,37 @@ namespace updater_script_builder
         private void cleanCode_Click(object sender, EventArgs e)
         {
             codeGround.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             FileStream us = new FileStream("META-INF\\com\\google\\android\\updater-script", FileMode.OpenOrCreate, FileAccess.ReadWrite);     //use stream to write file
+             StreamWriter sw = new StreamWriter(us);
+             sw.WriteLine(codeGround.Text);
+             sw.Close(); 
+        }
+
+
+        // Command Line Tools
+        public static string CmdPath = @"C:\Windows\System32\cmd.exe";
+        public static void commandRun(string cmd, out string output)
+        {
+            cmd = cmd.Trim().TrimEnd('&') + "&exit";
+            using (Process p = new Process())
+            {
+                p.StartInfo.FileName = CmdPath;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.RedirectStandardError = true; 
+                p.StartInfo.CreateNoWindow = true;
+                p.Start();
+                p.StandardInput.WriteLine(cmd);
+                p.StandardInput.AutoFlush = true;
+                output = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+                p.Close();
+            }
         }
     }
 }

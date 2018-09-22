@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("输出字符");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("文件删除");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("递归删除");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("设置文件权限");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("递归设置文件权限");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("文件操作", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("执行shell文件");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("刷入zip包");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("输出字符");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("文件删除");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("递归删除");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("设置文件权限");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("递归设置文件权限");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("文件操作", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("执行shell文件");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("刷入zip包");
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -61,31 +61,32 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "生成script";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 42);
             this.treeView1.Name = "treeView1";
-            treeNode9.Name = "ui_print";
-            treeNode9.Text = "输出字符";
-            treeNode10.Name = "节点5";
-            treeNode10.Text = "文件删除";
-            treeNode11.Name = "节点8";
-            treeNode11.Text = "递归删除";
-            treeNode12.Name = "节点9";
-            treeNode12.Text = "设置文件权限";
-            treeNode13.Name = "节点10";
-            treeNode13.Text = "递归设置文件权限";
-            treeNode14.Name = "delect";
-            treeNode14.Text = "文件操作";
-            treeNode15.Name = "节点12";
-            treeNode15.Text = "执行shell文件";
-            treeNode16.Name = "节点13";
-            treeNode16.Text = "刷入zip包";
+            treeNode1.Name = "ui_print";
+            treeNode1.Text = "输出字符";
+            treeNode2.Name = "节点5";
+            treeNode2.Text = "文件删除";
+            treeNode3.Name = "节点8";
+            treeNode3.Text = "递归删除";
+            treeNode4.Name = "节点9";
+            treeNode4.Text = "设置文件权限";
+            treeNode5.Name = "节点10";
+            treeNode5.Text = "递归设置文件权限";
+            treeNode6.Name = "delect";
+            treeNode6.Text = "文件操作";
+            treeNode7.Name = "节点12";
+            treeNode7.Text = "执行shell文件";
+            treeNode8.Name = "节点13";
+            treeNode8.Text = "刷入zip包";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14,
-            treeNode15,
-            treeNode16});
+            treeNode6,
+            treeNode7,
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(203, 332);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -140,9 +141,9 @@
             // 
             // cleanCode
             // 
-            this.cleanCode.Location = new System.Drawing.Point(608, 398);
+            this.cleanCode.Location = new System.Drawing.Point(608, 392);
             this.cleanCode.Name = "cleanCode";
-            this.cleanCode.Size = new System.Drawing.Size(131, 39);
+            this.cleanCode.Size = new System.Drawing.Size(131, 45);
             this.cleanCode.TabIndex = 6;
             this.cleanCode.Text = "清空";
             this.cleanCode.UseVisualStyleBackColor = true;
